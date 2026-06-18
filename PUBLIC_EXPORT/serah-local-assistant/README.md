@@ -131,3 +131,15 @@ See `docs/trading-safety-harness-case-study.md` for a full list of exclusions.
 | Agent definitions (data-sanity-auditor, risk-officer) | Active — validated |
 | Live trading eligibility | BLOCKED — 0/10 signals per engine |
 | Real orders placed | 0 |
+
+### Futures Learning Track
+
+The current public export is focused mainly on equity-style scanner research, but the broader learning track also includes futures market structure.
+
+Futures are treated as an education and research topic only. The system does not trade futures, does not place futures orders, and does not connect to any futures broker. Futures-related work is limited to learning concepts such as contract specifications, leverage, margin requirements, tick size, session structure, liquidity, risk controls, and why futures require stricter safety rules than basic stock research.
+
+Any future futures-related module would remain dry-run only and would require a separate packet schema, risk checks, position-sizing rules, and safety gates before any live use could even be considered.
+
+Current futures status: education and research only. No futures orders, no futures broker connection, and no live futures trading.
+
+| Futures learning track | Education/research only — no broker connection, no live trading |
