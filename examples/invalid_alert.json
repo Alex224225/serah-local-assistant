@@ -1,0 +1,57 @@
+{
+    "_comment": "SYNTHETIC DATA - DELIBERATELY INVALID - FOR REJECTION TESTING ONLY",
+    "_note": "SYNT-BAD does not exist. Errors here are intentional to test validation.",
+    "schema_version": "1.0",
+    "status": "Research Lead Only",
+    "no_trade_statement": "No trade action taken",
+    "timestamp_utc": "2026-06-18T14:32:00Z",
+    "timestamp_et": "2026-06-18T10:32:00-04:00",
+    "trading_date": "2026-06-18",
+    "ticker": "SYNT-BAD",
+    "exchange": "NMS",
+    "quote_type": "EQUITY",
+    "company_name": "SynthBad Corp (FICTIONAL - INVALID FIXTURE)",
+    "price": "not-a-number",
+    "prev_close": 21.20,
+    "move_pct": 999.99,
+    "data_source": "",
+    "data_freshness": "synthetic",
+    "volume": {
+          "current_session_volume": -500,
+          "adv_20d": null,
+          "adv_30d": null,
+          "rvol_current": null,
+          "rvol_projected": null,
+          "dollar_volume": 0.0,
+          "source": "",
+          "timestamp": "2026-06-19T14:32:00Z"
+    },
+    "spread": {
+          "bid": -1.50,
+          "ask": 24.88,
+          "spread_pct": -7.03,
+          "valid": false
+    },
+    "catalyst": {
+          "present": true,
+          "type": null,
+          "source": null,
+          "source_date": null,
+          "event_date": null,
+          "freshness": "unknown"
+    },
+    "risk_flags": [],
+    "missing_fields": [],
+    "_validation_errors_expected": [
+          "price must be a positive float, got string",
+          "volume.current_session_volume must be non-negative integer",
+          "spread.bid must be >= 0",
+          "spread.ask must be >= spread.bid",
+          "spread_pct is inconsistent with bid/ask values",
+          "move_pct inconsistent with price/prev_close",
+          "volume.source must not be empty",
+          "data_source must not be empty",
+          "volume.timestamp is later than capture timestamp_utc",
+          "blocking missing evidence - not ready for audit"
+    ]
+}
