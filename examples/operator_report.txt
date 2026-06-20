@@ -30,7 +30,7 @@ CANDIDATE PIPELINE
       Move:          +17.22% (synthetic)
       Tier:          3
       RVOL:          3.21x (synthetic)
-      Readiness:     READY FOR AUDIT QUEUE
+      Review-Readiness: READY FOR HUMAN REVIEW QUEUE
       Notes:         All required fields present. No validation errors.
 
 ---
@@ -65,7 +65,7 @@ INVALID CANDIDATES TESTED
         - volume.source must not be empty
         - data_source must not be empty
         - volume.timestamp is later than capture timestamp_utc
-        - blocking missing evidence - not ready for audit
+        - blocking missing evidence - not review-ready
 
 ---
 
