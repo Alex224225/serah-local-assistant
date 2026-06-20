@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [public-repo-improvement, main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Install and Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package with dev dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run demo (python -m serah_demo)
+        run: |
+          echo "--- Running python -m serah_demo ---"
+          python -m serah_demo
+          echo "--- Demo completed successfully ---"
+          echo "SAFETY: The demo uses synthetic local data only."
+          echo "SAFETY: No network access, no brokerage connection, no order capability."
+
+      - name: Run console-script entry point (serah-demo)
+        run: |
+          echo "--- Running serah-demo console script ---"
+          serah-demo
+          echo "--- Console script completed successfully ---"
+
+      - name: Run tests
+        run: pytest
+
+    # SAFETY NOTES:
+    # - This workflow uses NO secrets.
+    # - It makes NO network requests to market data providers, brokerages, or order systems.
+    # - All test fixtures are synthetic local files in the tests/ and examples/ directories.
+    # - The serah-demo package has zero runtime dependencies beyond the Python standard library.
+    # - python -m serah_demo and serah-demo run entirely on synthetic local data (SYNT-X).
+    # - No order is placed, drafted, or reviewed by any step in this workflow.
