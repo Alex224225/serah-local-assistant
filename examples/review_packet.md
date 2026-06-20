@@ -91,7 +91,7 @@ A Tier 3 candidate qualifies for audit. Standard 18-item checklist applies.
 
 ---
 
-## Readiness Gate
+## Review-Readiness Gate
 
 - [x] Status is "Research Lead Only"
 - [x] No trade statement present
@@ -104,7 +104,7 @@ A Tier 3 candidate qualifies for audit. Standard 18-item checklist applies.
 - [x] No blocking missing evidence
 - [x] Tier >= 2 (qualifies for audit queue)
 
-**Readiness: READY FOR AUDIT QUEUE** (synthetic demonstration only)
+**Review-Readiness: READY FOR HUMAN REVIEW QUEUE** (synthetic demonstration only)
 
 ---
 
