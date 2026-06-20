@@ -152,6 +152,26 @@ All fixture data uses obviously fictional symbols. No output from this demo cons
 
 ---
 
+### What the Demo Shows
+
+The screenshot below captures a complete run of the public Serah demonstration using entirely synthetic data.
+
+![Serah demo terminal output — synthetic data only, no network access, no orders](assets/serah-demo-terminal.png)
+
+The demo:
+
+- Loads a fictional market alert for SYNT-X.
+- Validates the alert's prices, spread calculations, percentage movement, timestamps, and required evidence.
+- Accepts the internally consistent synthetic alert.
+- Rejects a deliberately malformed alert and reports six validation errors.
+- Builds a structured evidence packet with a stable packet ID and content hash.
+- Marks the packet as Review-Ready, meaning the evidence is complete enough for human inspection — not that a trade is approved or ready for execution.
+- Produces an operator report summarizing the accepted and rejected packets.
+
+The safety summary confirms that the demo makes no network requests, connects to no brokerage, uses only synthetic data, and has no ability to place orders.
+
+---
+
 ## The Opportunity Engine — Research Case Study
 
 The Opportunity Engine is a **research-only safety-engineering case study** built on Serah's infrastructure. It demonstrates how an LLM-assisted research pipeline can enforce hard gates between a market observation and a human decision point.
