@@ -41,7 +41,7 @@ def build_review_packet_text(packet: EvidencePacket) -> str:
         out.append("**RVOL:** N/A")
     out.append("")
     ready = 'Yes' if packet.is_ready_for_audit else 'No'
-    out.append(f"**Ready for audit:** {ready}")
+    out.append(f"**Review-Ready (human review):** {ready}")
     out.append(f"**Content hash:** {packet.content_hash[:48]}")
     out.append("")
     out.append(f"*{SAFETY_DISCLAIMER}*")
@@ -64,7 +64,7 @@ def build_operator_report(
     ]
     for i, p in enumerate(packets, 1):
         ready = 'Y' if p.is_ready_for_audit else 'N'
-        out.append(f"  [{i}] {p.ticker} Tier:{p.tier} Move:{p.move_pct:+.2f}% Ready:{ready}")
+        out.append(f"  [{i}] {p.ticker} Tier:{p.tier} Move:{p.move_pct:+.2f}% Review-Ready:{ready}")
     out += [
         "",
         "SAFETY SUMMARY",
