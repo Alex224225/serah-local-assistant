@@ -6,7 +6,6 @@ from .report_builder import build_review_packet_text, build_operator_report
 
 EXAMPLES_DIR = pathlib.Path(__file__).parent.parent.parent / 'examples'
 
-
 def run_demo():
     print('serah_demo v1.0 - Synthetic Demo. SYNT-X DOES NOT EXIST.')
     valid_data = json.loads((EXAMPLES_DIR / 'synthetic_alert.json').read_text())
@@ -25,7 +24,7 @@ def run_demo():
         pass
     report = build_review_packet_text(packet)
     op = build_operator_report([packet], invalid_count=1, invalid_errors=bad_errors[:3])
-    print(f'Packet: {packet.packet_id} Tier:{packet.tier} Ready:{packet.is_ready_for_audit}')
+    print(f'Packet: {packet.packet_id}  Tier:{packet.tier}  Review-Ready:{packet.is_ready_for_audit}')
     print(f'Hash: {packet.content_hash[:32]}')
     print(f'Validation errors on invalid: {len(bad_errors)}')
     print(op)
